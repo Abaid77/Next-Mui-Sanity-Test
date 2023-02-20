@@ -110,51 +110,58 @@ export default function NavBar() {
               </Grid>
             ) : (
               <>
-                <Link
-                  href="/"
-                  style={{ textDecoration: "none", color: "inherit" }}
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  spacing={1}
                 >
-                  <Button color="inherit">Home</Button>
-                </Link>
-                &#124;
-                <Link
-                  href="/cars"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <Button color="inherit">Inventory</Button>
-                </Link>
-                &#124;
-                <Link
-                  href="/about"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <Button color="inherit">About Us</Button>
-                </Link>
-                &#124;
-                <Link
-                  href="/videos"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <Button color="inherit">Videos</Button>
-                </Link>
-                &#124;
-                <a
-                  href="https://www.sundancemazda.com/en/news/list/reviews"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button color="inherit">Reviews</Button>
-                </a>
-                &#124;
-                <a
-                  href="https://www.sundancemazda.com/en/news?limit=12"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button color="inherit">News</Button>
-                </a>
+                  <Link
+                    href="/"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <Button color="inherit">Home</Button>
+                  </Link>
+                  &#124;
+                  <Link
+                    href="/cars"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <Button color="inherit">Inventory</Button>
+                  </Link>
+                  &#124;
+                  <Link
+                    href="/about"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <Button color="inherit">About Us</Button>
+                  </Link>
+                  &#124;
+                  <Link
+                    href="/videos"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <Button color="inherit">Videos</Button>
+                  </Link>
+                  &#124;
+                  <a
+                    href="https://www.sundancemazda.com/en/news/list/reviews"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Button color="inherit">Reviews</Button>
+                  </a>
+                  &#124;
+                  <a
+                    href="https://www.sundancemazda.com/en/news?limit=12"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Button color="inherit">News</Button>
+                  </a>
+                </Box>
               </>
             )}
           </Box>

@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import { Box, Typography } from "@mui/material";
 import MediaCard from "@/components/Card";
 import Navbar from "@/components/Navbar";
+import HomeCarousel from "@/components/HomeCarousel";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +21,9 @@ export default function Home() {
       </Head>
       <main>
         <Navbar />
+        <HomeCarousel />
 
-        <Box
+        {/* <Box
           sx={{
             display: "flex",
             flexDirection: "row",
@@ -36,7 +38,7 @@ export default function Home() {
           <Box>
             <MediaCard />
           </Box>
-        </Box>
+        </Box> */}
       </main>
     </>
   );
