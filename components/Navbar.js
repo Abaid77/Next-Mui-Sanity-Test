@@ -55,7 +55,7 @@ export default function NavBar() {
           <Avatar
             alt="Mazda Logo"
             variant="square"
-            src="/static/maggies-logo2.png"
+            src="/static/logo-icon.png"
           />
         </Link>
       </IconButton>
