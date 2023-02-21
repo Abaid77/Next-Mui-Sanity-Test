@@ -1,17 +1,17 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
 
-import AccountCircle from "@mui/icons-material/AccountCircle";
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
-import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
-import { Avatar, Button, Grid, useMediaQuery } from "@mui/material";
-import { PhoneEnabled } from "@mui/icons-material";
-import Link from "next/link";
-import MenuDrawer from "./MenuDrawer";
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
+import { Avatar, Button, Grid, useMediaQuery } from '@mui/material';
+import { PhoneEnabled } from '@mui/icons-material';
+import Link from 'next/link';
+import MenuDrawer from './MenuDrawer';
 
 export default function NavBar() {
   const [auth, setAuth] = React.useState(true);
@@ -19,7 +19,7 @@ export default function NavBar() {
   const [phoneNumber, setPhoneNumber] = React.useState(null);
   const [menu, setMenu] = React.useState(null);
 
-  const hideInMobileMode = useMediaQuery((theme) => theme.breakpoints.up("md"));
+  const hideInMobileMode = useMediaQuery((theme) => theme.breakpoints.up('md'));
 
   // const anchorElOnChange = (event) => {
   //   setAuth(event.target.checked);
@@ -51,7 +51,7 @@ export default function NavBar() {
   const mazdaLogo = () => {
     return (
       <IconButton size="large" edge="start" color="inherit" aria-label="menu">
-        <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
+        <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Avatar
             alt="Mazda Logo"
             variant="square"
@@ -63,7 +63,7 @@ export default function NavBar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, marginBottom: "64px" }}>
+    <Box sx={{ flexGrow: 1, marginBottom: '64px' }}>
       {/* <FormGroup>
         <FormControlLabel
           control={
@@ -83,13 +83,13 @@ export default function NavBar() {
             id="menu-appbar"
             anchorEl={menu}
             anchorOrigin={{
-              vertical: "top",
-              horizontal: "left",
+              vertical: 'top',
+              horizontal: 'left',
             }}
             keepMounted
             transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
+              vertical: 'top',
+              horizontal: 'left',
             }}
             open={Boolean(menu)}
             onClose={menuOnClose}
@@ -118,35 +118,35 @@ export default function NavBar() {
                 >
                   <Link
                     href="/"
-                    style={{ textDecoration: "none", color: "inherit" }}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     <Button color="inherit">Home</Button>
                   </Link>
                   &#124;
                   <Link
                     href="/cars"
-                    style={{ textDecoration: "none", color: "inherit" }}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     <Button color="inherit">Inventory</Button>
                   </Link>
                   &#124;
                   <Link
                     href="/about"
-                    style={{ textDecoration: "none", color: "inherit" }}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     <Button color="inherit">About Us</Button>
                   </Link>
                   &#124;
                   <Link
                     href="/videos"
-                    style={{ textDecoration: "none", color: "inherit" }}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     <Button color="inherit">Videos</Button>
                   </Link>
                   &#124;
                   <a
                     href="https://www.sundancemazda.com/en/news/list/reviews"
-                    style={{ textDecoration: "none", color: "inherit" }}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -155,7 +155,7 @@ export default function NavBar() {
                   &#124;
                   <a
                     href="https://www.sundancemazda.com/en/news?limit=12"
-                    style={{ textDecoration: "none", color: "inherit" }}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -195,13 +195,13 @@ export default function NavBar() {
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
+                  vertical: 'top',
+                  horizontal: 'right',
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
+                  vertical: 'top',
+                  horizontal: 'right',
                 }}
                 open={Boolean(phoneNumber)}
                 onClose={phoneNumberOnClose}
@@ -220,13 +220,13 @@ export default function NavBar() {
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
+                  vertical: 'top',
+                  horizontal: 'right',
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
+                  vertical: 'top',
+                  horizontal: 'right',
                 }}
                 open={Boolean(anchorEl)}
                 onClose={anchorElOnClose}
