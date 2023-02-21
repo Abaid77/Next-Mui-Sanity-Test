@@ -206,15 +206,7 @@ export default function NavBar() {
                 open={Boolean(phoneNumber)}
                 onClose={phoneNumberOnClose}
               >
-                <MenuItem onClick={phoneNumberOnClose}>
-                  Sales: 1-844-394-3633
-                </MenuItem>
-                <MenuItem onClick={phoneNumberOnClose}>
-                  Service: 1-844-472-8053
-                </MenuItem>
-                <MenuItem onClick={phoneNumberOnClose}>
-                  Parts: 1-780-454-7278
-                </MenuItem>
+                <MenuItem onClick={phoneNumberOnClose}>403-692-3248</MenuItem>
               </Menu>
               <Menu
                 id="menu-appbar"
