@@ -16,29 +16,17 @@ export default function HomeCarousel() {
       showStatus={false}
     >
       <div>
-        <img
-          src={
-            mobileSize
-              ? "https://img.sm360.ca/images/promo/sundance-mazda/49806//mazda-header-768x1000-promos-tire-offer-en1630533873834.jpg"
-              : tabletSize
-              ? "https://img.sm360.ca/images/promo/sundance-mazda/49806//mazda-header-1200x450-promos-tire-offer-en1630533868927.jpg"
-              : "https://img.sm360.ca/images/promo/sundance-mazda/49806//mazda-header-1920x500-promos-tire-offer-en1630533864335.jpg"
-          }
-          alt="Mazda Banner"
-        />
-      </div>
-      <div>
-        <Link href="/cars">
+        <Link href="/about">
           <div>
             <img
               src={
                 mobileSize
-                  ? "https://img.sm360.ca/images/promo/sundance-mazda/104213//2020-06-sundance-mazda-header-mobile-build-and-price1592490710811.jpg"
+                  ? "/static/home-carousel-mobile02.webp"
                   : tabletSize
-                  ? "https://img.sm360.ca/images/promo/sundance-mazda/104213//2020-06-sundance-mazda-header-tablette-build-and-price1592490706476.jpg"
-                  : "https://img.sm360.ca/images/promo/sundance-mazda/104213//2020-06-sundance-mazda-header-desktop-build-and-price1592490700836.jpg"
+                  ? "/static/home-carousel-tablet02.webp"
+                  : "/static/home-carousel-desktop02.webp"
               }
-              alt="Mazda Banner"
+              alt="Maggie's Banner"
             />
           </div>
         </Link>
@@ -54,7 +42,7 @@ export default function HomeCarousel() {
                   ? "/static/home-carousel-tablet01.webp"
                   : "/static/home-carousel-desktop01.webp"
               }
-              alt="Mazda Banner"
+              alt="Maggie's Banner"
             />
           </div>
         </Link>
