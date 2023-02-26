@@ -127,7 +127,14 @@ export default function NavBar() {
                     href="/cars"
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
-                    <Button color="inherit">Inventory</Button>
+                    <Button color="inherit">Watches</Button>
+                  </Link>
+                  &#124;
+                  <Link
+                    href="/about"
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                    <Button color="inherit">Jewlery</Button>
                   </Link>
                   &#124;
                   <Link
@@ -177,19 +184,6 @@ export default function NavBar() {
               >
                 <PhoneEnabled />
               </IconButton>
-              {hideInMobileMode && (
-                <IconButton
-                  size="small"
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  onClick={handleAnchorEl}
-                  color="inherit"
-                  sx={{ ml: 2 }}
-                >
-                  <AccountCircle />
-                </IconButton>
-              )}
 
               <Menu
                 id="menu-appbar"
@@ -207,25 +201,6 @@ export default function NavBar() {
                 onClose={phoneNumberOnClose}
               >
                 <MenuItem onClick={phoneNumberOnClose}>403-692-3248</MenuItem>
-              </Menu>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorEl)}
-                onClose={anchorElOnClose}
-              >
-                <MenuItem onClick={anchorElOnClose}>My Profile</MenuItem>
-                <MenuItem onClick={anchorElOnClose}>My Garage</MenuItem>
-                <MenuItem onClick={anchorElOnClose}>Log Out</MenuItem>
               </Menu>
             </div>
           )}
