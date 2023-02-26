@@ -1,35 +1,35 @@
 import {
   Home,
-  DirectionsCar,
   Info,
-  Garage,
   AccountBox,
   Logout,
   Reviews,
   ImportContacts,
-} from "@mui/icons-material";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+} from '@mui/icons-material';
+import WatchIcon from '@mui/icons-material/Watch';
+import DiamondIcon from '@mui/icons-material/Diamond';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 // Base the input argument this function will return an icon
 export default function MenuDrawerIcon(menu) {
   switch (menu) {
-    case "Home":
+    case 'Home':
       return <Home />;
-    case "Inventory":
-      return <DirectionsCar />;
-    case "About Us":
+    case 'Watches':
+      return <WatchIcon />;
+    case 'About Us':
       return <Info />;
-    case "My Garage":
-      return <Garage />;
-    case "Reviews":
+    case 'Jewelry':
+      return <DiamondIcon />;
+    case 'Reviews':
       return <Reviews />;
-    case "Videos":
+    case 'Videos':
       return <YouTubeIcon />;
-    case "News":
+    case 'News':
       return <ImportContacts />;
-    case "My Profile":
+    case 'My Profile':
       return <AccountBox />;
-    case "Logout":
+    case 'Logout':
       return <Logout />;
     default:
       break;
@@ -38,20 +38,21 @@ export default function MenuDrawerIcon(menu) {
 
 export function MenuDrawerLinks(menu) {
   switch (menu) {
-    case "Home":
-      return "/";
-    case "Inventory":
-      return "/cars";
-    case "About Us":
-      return "/about";
-    case "Videos":
-      return "/videos";
-    case "My Garage":
-      return "/";
-    case "My Profile":
-      return "/";
-    case "Logout":
-      return "/";
+    case 'Home':
+      return '/';
+    case 'Watches':
+      return '/cars';
+    case 'Jewelry':
+      return '/';
+    case 'About Us':
+      return '/about';
+    case 'Videos':
+      return '/videos';
+
+    case 'My Profile':
+      return '/';
+    case 'Logout':
+      return '/';
     default:
       break;
   }

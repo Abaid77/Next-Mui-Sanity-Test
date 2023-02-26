@@ -48,12 +48,12 @@ export default function NavBar() {
     setMenu(null);
   };
 
-  const mazdaLogo = () => {
+  const maggiesLogo = () => {
     return (
       <IconButton size="large" edge="start" color="inherit" aria-label="menu">
         <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Avatar
-            alt="Mazda Logo"
+            alt="Maggies Logo"
             variant="square"
             src="/static/logo-icon.png"
           />
@@ -78,7 +78,7 @@ export default function NavBar() {
       </FormGroup> */}
       <AppBar position="fixed">
         <Toolbar>
-          {hideInMobileMode ? mazdaLogo() : <MenuDrawer />}
+          {hideInMobileMode ? maggiesLogo() : <MenuDrawer />}
           <Menu
             id="menu-appbar"
             anchorEl={menu}
@@ -106,7 +106,7 @@ export default function NavBar() {
                 alignItems="center"
                 spacing={1}
               >
-                <Grid item>{mazdaLogo()}</Grid>
+                <Grid item>{maggiesLogo()}</Grid>
               </Grid>
             ) : (
               <>
