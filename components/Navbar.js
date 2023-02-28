@@ -51,9 +51,9 @@ export default function NavBar() {
     return (
       <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
         <Image
-          src="/static/maggies-logo.png"
+          src="/static/logo-icon.png"
           alt="logo"
-          width="210"
+          width="100"
           height="70"
         ></Image>
       </Link>
