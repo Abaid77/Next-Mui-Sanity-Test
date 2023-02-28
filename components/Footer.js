@@ -1,5 +1,5 @@
 import { AppBar, Typography, Box, Grid } from '@mui/material';
-import BusinessHours from './BusinessHours';
+
 import FacebookIcon from '@mui/icons-material/Facebook';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -82,7 +82,43 @@ export default function Footer() {
               alignItems: 'center',
             }}
           >
-            <BusinessHours />
+            <Box sx={{}}>
+              <Typography variant="h6" color="inherit" p={2}>
+                Business Hours
+              </Typography>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Monday</td>
+                    <td>10:00AM - 8:00PM</td>
+                  </tr>
+                  <tr>
+                    <td>Tuesday</td>
+                    <td>10:00AM - 8:00PM</td>
+                  </tr>
+                  <tr>
+                    <td>Wednesday</td>
+                    <td>10:00AM - 8:00PM</td>
+                  </tr>
+                  <tr>
+                    <td>Thursday</td>
+                    <td>10:00AM - 8:00PM</td>
+                  </tr>
+                  <tr>
+                    <td>Friday</td>
+                    <td>10:00AM - 8:00PM</td>
+                  </tr>
+                  <tr>
+                    <td>Saturday</td>
+                    <td>10:00AM - 8:00PM</td>
+                  </tr>
+                  <tr>
+                    <td>Sunday</td>
+                    <td>11:00AM - 6:00PM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </Box>
           </Grid>
           <Grid
             item
