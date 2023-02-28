@@ -122,14 +122,14 @@ export default function NavBar() {
                   </Link>
                   &#124;
                   <Link
-                    href="/cars"
+                    href="/watches"
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     <Button color="inherit">Watches</Button>
                   </Link>
                   &#124;
                   <Link
-                    href="/about"
+                    href="/jewlery"
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     <Button color="inherit">Jewlery</Button>
@@ -143,14 +143,14 @@ export default function NavBar() {
                   </Link>
                   &#124;
                   <Link
-                    href="/videos"
+                    href="/contact"
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
-                    <Button color="inherit">Videos</Button>
+                    <Button color="inherit">Contact Us</Button>
                   </Link>
                   &#124;
                   <a
-                    href="https://www.sundancemazda.com/en/news/list/reviews"
+                    href="/reviews"
                     style={{ textDecoration: 'none', color: 'inherit' }}
                     target="_blank"
                     rel="noreferrer"
@@ -159,7 +159,7 @@ export default function NavBar() {
                   </a>
                   &#124;
                   <a
-                    href="https://www.sundancemazda.com/en/news?limit=12"
+                    href="/news"
                     style={{ textDecoration: 'none', color: 'inherit' }}
                     target="_blank"
                     rel="noreferrer"
