@@ -1,0 +1,98 @@
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
+
+export default function BusinessHours() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Box sx={{}}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="Business Hours"
+          centered
+          textColor="inherit"
+          indicatorColor="secondary"
+        >
+          <Tab label="Hours" {...a11yProps(0)} />
+        </Tabs>
+      </Box>
+      <TabPanel value={value} index={0} className="business-hours">
+        <table>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>10:00AM - 8:00PM</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>10:00AM - 8:00PM</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>10:00AM - 8:00PM</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>10:00AM - 8:00PM</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>10:00AM - 8:00PM</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>10:00AM - 8:00PM</td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>11:00AM - 6:00PM</td>
+            </tr>
+          </tbody>
+        </table>
+      </TabPanel>
+    </Box>
+  );
+}

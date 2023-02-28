@@ -1,14 +1,16 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
-import Button from "@mui/material/Button";
-import { Box, Typography } from "@mui/material";
-import MediaCard from "@/components/Card";
-import Navbar from "@/components/Navbar";
-import HomeCarousel from "@/components/HomeCarousel";
+import Head from 'next/head';
+import Image from 'next/image';
+import { Inter } from '@next/font/google';
+import styles from '@/styles/Home.module.css';
+import Button from '@mui/material/Button';
+import { Box, Typography } from '@mui/material';
+import MediaCard from '@/components/Card';
+import Navbar from '@/components/Navbar';
+import HomeCarousel from '@/components/HomeCarousel';
+import Footer from '@/components/Footer';
+import Grid from '@mui/material';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -22,6 +24,9 @@ export default function Home() {
       <main>
         <Navbar />
         <HomeCarousel />
+        <Footer />
+
+        {/* <Footer /> */}
 
         {/* <Box
           sx={{

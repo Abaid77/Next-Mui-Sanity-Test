@@ -4,14 +4,13 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 
-import AccountCircle from '@mui/icons-material/AccountCircle';
-
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { Avatar, Button, Grid, useMediaQuery } from '@mui/material';
 import { PhoneEnabled } from '@mui/icons-material';
 import Link from 'next/link';
 import MenuDrawer from './MenuDrawer';
+import Image from 'next/image';
 
 export default function NavBar() {
   const [auth, setAuth] = React.useState(true);
@@ -50,15 +49,14 @@ export default function NavBar() {
 
   const maggiesLogo = () => {
     return (
-      <IconButton size="large" edge="start" color="inherit" aria-label="menu">
-        <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Avatar
-            alt="Maggies Logo"
-            variant="square"
-            src="/static/logo-icon.png"
-          />
-        </Link>
-      </IconButton>
+      <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Image
+          src="/static/maggies-logo.png"
+          alt="logo"
+          width="210"
+          height="70"
+        ></Image>
+      </Link>
     );
   };
 
