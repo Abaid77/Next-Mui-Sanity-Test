@@ -51,9 +51,9 @@ export default function NavBar() {
     return (
       <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
         <Image
-          src="/static/logo-icon.png"
+          src="/static/maggies-logo.png"
           alt="logo"
-          width="100"
+          width="210"
           height="70"
         ></Image>
       </Link>
@@ -77,24 +77,6 @@ export default function NavBar() {
       <AppBar position="fixed">
         <Toolbar>
           {hideInMobileMode ? maggiesLogo() : <MenuDrawer />}
-          <Menu
-            id="menu-appbar"
-            anchorEl={menu}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-            open={Boolean(menu)}
-            onClose={menuOnClose}
-          >
-            <MenuItem onClick={menuOnClose}>Profile</MenuItem>
-            <MenuItem onClick={menuOnClose}>My Account</MenuItem>
-          </Menu>
 
           <Box sx={{ flexGrow: 1 }}>
             {!hideInMobileMode ? (
