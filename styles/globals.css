@@ -10,3 +10,8 @@ body,
 ::-webkit-scrollbar {
   width: 0px;
 }
+
+.about-image img {
+  width: 540px;
+  height: 304px;
+}
