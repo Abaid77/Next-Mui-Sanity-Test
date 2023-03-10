@@ -9,8 +9,7 @@ import Navbar from '@/components/Navbar';
 import HomeCarousel from '@/components/HomeCarousel';
 import Footer from '@/components/Footer';
 import Grid from '@mui/material';
-
-const inter = Inter({ subsets: ['latin'] });
+import MapSection from '../components/Map';
 
 export default function Home() {
   return (
@@ -24,6 +23,20 @@ export default function Home() {
       <main>
         <Navbar />
         <HomeCarousel />
+        <Box
+          sx={{
+            display: 'flex',
+            margin: 2,
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Typography variant="h5" paddingBottom={2}>
+            Come Visit us!
+          </Typography>
+          <MapSection />
+        </Box>
+
         <Footer />
 
         {/* <Footer /> */}
