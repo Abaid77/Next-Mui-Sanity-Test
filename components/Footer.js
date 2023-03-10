@@ -35,7 +35,7 @@ export default function Footer() {
               </Typography>
               <Typography variant="h7" fontWeight="light" color="inherit">
                 <Link
-                  href="https://www.google.com/maps?q=Sundance+Mazda+17990+102+Ave+NW+T5S+1M9+AB+Edmonton"
+                  href="https://www.google.com/maps/place/Maggie's+Diamond+Boutique/@50.9993165,-114.0764286,17z/data=!3m1!4b1!4m6!3m5!1s0x537170ff120e74b1:0x76bd3eba6efb26d!8m2!3d50.9993165!4d-114.0742399!16s%2Fg%2F1tknk393"
                   style={{ textDecoration: 'none', color: 'inherit' }}
                   target="to_blank"
                 >
