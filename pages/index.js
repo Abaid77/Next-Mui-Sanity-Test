@@ -38,25 +38,6 @@ export default function Home() {
         </Box>
 
         <Footer />
-
-        {/* <Footer /> */}
-
-        {/* <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "6rem",
-            gap: 4,
-          }}
-        >
-          <Button variant="contained">Hello World</Button>
-          <Button variant="contained">Hello World</Button>
-          <Box>
-            <MediaCard />
-          </Box>
-        </Box> */}
       </main>
     </>
   );
