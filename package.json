@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-stiemap",
     "start": "next start",
     "lint": "next lint"
   },
@@ -22,5 +23,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-responsive-carousel": "^3.2.23"
+  },
+  "devDependencies": {
+    "next-sitemap": "^4.0.6"
   }
 }

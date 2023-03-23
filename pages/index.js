@@ -3,15 +3,35 @@ import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import styles from '@/styles/Home.module.css';
 import Button from '@mui/material/Button';
-import { Box, Typography } from '@mui/material';
+import {
+  Box,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  TextField,
+  Typography,
+} from '@mui/material';
 import MediaCard from '@/components/Card';
 import Navbar from '@/components/Navbar';
 import HomeCarousel from '@/components/HomeCarousel';
 import Footer from '@/components/Footer';
 import Grid from '@mui/material';
 import MapSection from '../components/Map';
+import ContactUs from '@/components/ContactUs';
+import { useState } from 'react';
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <Head>
@@ -31,6 +51,25 @@ export default function Home() {
             alignItems: 'center',
           }}
         >
+          <Button variant="outlined" onClick={handleClickOpen} color="success">
+            Open form dialog
+          </Button>
+          <Dialog open={open} onClose={handleClose}>
+            <DialogTitle>Contact Us</DialogTitle>
+            <DialogContent>
+              <ContactUs />
+              <Box display="flex" justifyContent="end">
+                <Button
+                  onClick={handleClose}
+                  color="success"
+                  variant="outlined"
+                  sx={{ margin: 2 }}
+                >
+                  Cancel
+                </Button>
+              </Box>
+            </DialogContent>
+          </Dialog>
           <Typography variant="h5" paddingBottom={2}>
             Come Visit us!
           </Typography>
