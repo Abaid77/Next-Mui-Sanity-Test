@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: 'https://maggiesdiamond.com/',
-  generateRobotsTxt: true,
+  siteUrl: 'https://next-mui-sanity-test.vercel.app/',
+  generateRobotsTxt: false,
 };
