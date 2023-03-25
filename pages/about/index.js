@@ -11,7 +11,7 @@ const About = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
           <Typography variant="h4" gutterBottom>
-            About Us!
+            About Us
           </Typography>
           <Typography variant="body1" paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
