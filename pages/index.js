@@ -4,7 +4,9 @@ import { Inter } from '@next/font/google';
 import styles from '@/styles/Home.module.css';
 import Button from '@mui/material/Button';
 import {
+  Alert,
   Box,
+  CircularProgress,
   Dialog,
   DialogActions,
   DialogContent,
@@ -20,9 +22,11 @@ import Footer from '@/components/Footer';
 import Grid from '@mui/material';
 import MapSection from '../components/Map';
 import ContactUs from '@/components/ContactUs';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { createClient } from 'next-sanity';
+import { urlFor } from './utils/client';
 
-export default function Home() {
+export default function Home({ products }) {
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -43,6 +47,17 @@ export default function Home() {
       <main>
         <Navbar />
         <HomeCarousel />
+        {products.map((product) => (
+          <>
+            <Typography key={product.slug}>{product.name}</Typography>
+            <img
+              src={urlFor(product.image[0])}
+              width={250}
+              height={250}
+              className="product-image"
+            />
+          </>
+        ))}
         <Box
           sx={{
             display: 'flex',
@@ -52,7 +67,7 @@ export default function Home() {
           }}
         >
           <Button variant="outlined" onClick={handleClickOpen} color="success">
-            Open form dialog
+            Contact Us
           </Button>
           <Dialog open={open} onClose={handleClose}>
             <DialogTitle>Contact Us</DialogTitle>
@@ -80,4 +95,21 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+const client = createClient({
+  projectId: 'of3tgqgc',
+  dataset: 'production',
+  apiVersion: '2022-03-25',
+  useCdn: false,
+});
+
+export async function getStaticProps() {
+  const products = await client.fetch(`*[_type == "product"]`);
+
+  return {
+    props: {
+      products,
+    },
+  };
 }
