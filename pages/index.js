@@ -19,12 +19,13 @@ import MediaCard from '@/components/Card';
 import Navbar from '@/components/Navbar';
 import HomeCarousel from '@/components/HomeCarousel';
 import Footer from '@/components/Footer';
-import Grid from '@mui/material';
+import { Grid } from '@mui/material';
 import MapSection from '../components/Map';
 import ContactUs from '@/components/ContactUs';
 import { useEffect, useState } from 'react';
 import { createClient } from 'next-sanity';
 import { urlFor } from './utils/client';
+import ProductCard from '@/components/ProductCard';
 
 export default function Home({ products }) {
   const [open, setOpen] = useState(false);
@@ -47,17 +48,13 @@ export default function Home({ products }) {
       <main>
         <Navbar />
         <HomeCarousel />
-        {products.map((product) => (
-          <>
-            <Typography key={product.slug}>{product.name}</Typography>
-            <img
-              src={urlFor(product.image[0])}
-              width={250}
-              height={250}
-              className="product-image"
-            />
-          </>
-        ))}
+        <Grid container spacing={3} margin={3}>
+          {products.map((product) => (
+            <Grid item xs={12} md={6} lg={4} key={product.slug}>
+              <ProductCard product={product} />
+            </Grid>
+          ))}
+        </Grid>
         <Box
           sx={{
             display: 'flex',
