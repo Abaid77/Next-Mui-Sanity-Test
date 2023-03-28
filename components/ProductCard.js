@@ -16,7 +16,7 @@ import NextLink from 'next/link';
 const ProductCard = ({ product }) => {
   if (product) {
     return (
-      <Card raised={true} key={product.slug.current}>
+      <Card raised={true} sx={{ maxWidth: 390, maxHeight: 500 }}>
         <Link
           href={`/product/${product.slug.current}`}
           passHref

@@ -50,7 +50,7 @@ export default function Home({ products }) {
         <HomeCarousel />
         <Grid container spacing={3} margin={3}>
           {products.map((product) => (
-            <Grid item xs={12} md={6} lg={4} key={product.slug}>
+            <Grid item xs={12} md={6} lg={4} key={product.slug.current}>
               <ProductCard product={product} />
             </Grid>
           ))}

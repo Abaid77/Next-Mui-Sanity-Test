@@ -19,3 +19,5 @@ function urlForThumbnail(source) {
 }
 
 export { urlForThumbnail };
+
+export default client;
