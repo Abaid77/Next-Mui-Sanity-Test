@@ -15,7 +15,7 @@ const builder = imageUrlBuilder(client);
 export const urlFor = (source) => builder.image(source);
 
 function urlForThumbnail(source) {
-  return imageUrlBuilder(client).image(source).width(300).url();
+  return builder.image(source).width(300).url();
 }
 
 export { urlForThumbnail };

@@ -24,7 +24,7 @@ import MapSection from '../components/Map';
 import ContactUs from '@/components/ContactUs';
 import { useEffect, useState } from 'react';
 import { createClient } from 'next-sanity';
-import { urlFor } from './utils/client';
+import { urlFor } from '../utils/client';
 import ProductCard from '@/components/ProductCard';
 
 export default function Home({ products }) {
