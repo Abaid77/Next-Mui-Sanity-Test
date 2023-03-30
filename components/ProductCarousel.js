@@ -20,7 +20,7 @@ export default function ProductCarousel(props) {
         ))} */}
 
       {props.images?.map((image) => (
-        <div>
+        <div key={props.slug}>
           <img src={urlFor(image)} alt="Product Image" key={props.slug} />
         </div>
       ))}
