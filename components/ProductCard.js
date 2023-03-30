@@ -16,7 +16,16 @@ import NextLink from 'next/link';
 const ProductCard = ({ product }) => {
   if (product) {
     return (
-      <Card raised={true} sx={{ maxWidth: 390, maxHeight: 500 }}>
+      <Card
+        raised={true}
+        sx={{
+          width: 400,
+          height: 400,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}
+      >
         <Link
           href={`/product/${product.slug.current}`}
           passHref
@@ -33,8 +42,13 @@ const ProductCard = ({ product }) => {
               component="img"
               src={urlFor(product.image[0])}
               title={product.name}
-              sx={{ padding: 5, maxWidth: 390 }}
-              height={390}
+              sx={{
+                padding: 5,
+                height: 'auto',
+                width: 'auto',
+                maxHeight: 300,
+                maxWidth: 300,
+              }}
             />
             <CardContent
               sx={{
