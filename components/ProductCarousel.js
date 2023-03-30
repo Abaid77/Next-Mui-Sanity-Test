@@ -21,7 +21,7 @@ export default function ProductCarousel(props) {
 
       {props.images?.map((image) => (
         <div>
-          <img src={urlFor(image)} alt="Product Image" />
+          <img src={urlFor(image)} alt="Product Image" key={props.slug} />
         </div>
       ))}
       {/* <div>
