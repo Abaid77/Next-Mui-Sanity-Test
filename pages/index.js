@@ -52,16 +52,21 @@ export default function Home({ products }) {
         <Grid
           container
           spacing={1}
-          margin={0}
           sx={{
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+
             flexWrap: 'wrap',
           }}
         >
           {products.map((product) => (
-            <Grid item xs={12} md={6} lg={4} key={product.slug.current}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={4}
+              key={product.slug.current}
+              sx={{ display: 'flex', justifyContent: 'center' }}
+            >
               <ProductCard product={product} />
             </Grid>
           ))}
