@@ -26,6 +26,7 @@ import { useEffect, useState } from 'react';
 import { createClient } from 'next-sanity';
 import { urlFor } from '../utils/client';
 import ProductCard from '@/components/ProductCard';
+import ProductCard2 from '@/components/ProductCard2';
 
 export default function Home({ products }) {
   const [open, setOpen] = useState(false);
@@ -48,13 +49,24 @@ export default function Home({ products }) {
       <main>
         <Navbar />
         <HomeCarousel />
-        <Grid container spacing={3} margin={3}>
+        <Grid
+          container
+          spacing={1}
+          margin={0}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+          }}
+        >
           {products.map((product) => (
             <Grid item xs={12} md={6} lg={4} key={product.slug.current}>
               <ProductCard product={product} />
             </Grid>
           ))}
         </Grid>
+
         <Box
           sx={{
             display: 'flex',

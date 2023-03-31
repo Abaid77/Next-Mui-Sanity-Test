@@ -1,5 +1,6 @@
 import { urlFor, urlForThumbnail } from '@/utils/client';
 import {
+  Box,
   Button,
   Card,
   CardActionArea,
@@ -7,11 +8,13 @@ import {
   CardContent,
   CardMedia,
   CircularProgress,
+  IconButton,
   Typography,
 } from '@mui/material';
 import { Link } from '@mui/material';
 import React from 'react';
 import NextLink from 'next/link';
+import InfoIcon from '@mui/icons-material/Info';
 
 const ProductCard = ({ product }) => {
   if (product) {
@@ -19,7 +22,7 @@ const ProductCard = ({ product }) => {
       <Card
         raised={true}
         sx={{
-          width: 400,
+          width: 390,
           height: 400,
           display: 'flex',
           flexDirection: 'column',
@@ -43,35 +46,48 @@ const ProductCard = ({ product }) => {
               src={urlFor(product.image[0])}
               title={product.name}
               sx={{
-                padding: 5,
                 height: 'auto',
                 width: 'auto',
                 maxHeight: 300,
-                maxWidth: 300,
+                maxWidth: 250,
               }}
             />
-            <CardContent
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-              <Typography color="secondary">{product.name}</Typography>
-            </CardContent>
           </CardActionArea>
         </Link>
-        <CardActions
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}
-        >
-          <Typography color="secondary">${product.price}</Typography>
-          <Button size="small" color="secondary" variant="outlined">
-            Details
-          </Button>
-        </CardActions>
+        <Box>
+          <CardContent
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
+            }}
+          >
+            <Typography color="secondary">{product.name}</Typography>
+            <Typography
+              dangerouslySetInnerHTML={{ __html: product.description }}
+              variant="body2"
+              color="textSecondary"
+              component="p"
+            />
+          </CardContent>
+          <CardActions
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
+            <Typography color="secondary">${product.price}</Typography>
+            <IconButton
+              aria-label="More Info"
+              component={Link}
+              href={`/product/${product.slug.current}`}
+              size="small"
+              color="secondary"
+            >
+              <InfoIcon />
+            </IconButton>
+          </CardActions>
+        </Box>
       </Card>
     );
   } else {
@@ -80,3 +96,15 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
+
+{
+  /* <Button
+component={Link}
+href={`/product/${product.slug.current}`}
+size="small"
+color="secondary"
+variant="outlined"
+>
+Details
+</Button> */
+}
