@@ -150,6 +150,11 @@ export default function ProductScreen(props) {
               </Grid>
             ))}
           </Grid>
+          <Link component={NextLink} href="/" passHref>
+            <Typography color="secondary" padding={2}>
+              Back Home
+            </Typography>
+          </Link>
         </Box>
       )}
     </>
