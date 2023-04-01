@@ -89,7 +89,7 @@ export default function ProductScreen(props) {
             <Grid item md={6} xs={12} lg={4}>
               <List>
                 <ListItem>
-                  <Typography component="h3" variant="h3">
+                  <Typography component="h4" variant="h4">
                     {product.name}
                   </Typography>
                 </ListItem>
@@ -98,7 +98,7 @@ export default function ProductScreen(props) {
                   <Typography>Description: {product.description}</Typography>
                 </ListItem>
                 <ListItem>
-                  <Typography>Price: ${product.price}</Typography>
+                  <Typography color="error">Price: ${product.price}</Typography>
                 </ListItem>
               </List>
             </Grid>
@@ -131,15 +131,21 @@ export default function ProductScreen(props) {
 
           <Grid
             container
-            display="flex"
-            spacing={5}
-            justifyContent="center"
-            alignContent="center"
-            justifyItems="center"
-            padding={2}
+            spacing={1}
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+            }}
           >
             {products.map((product) => (
-              <Grid item xs={12} md={6} lg={4} key={product.slug.current}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                lg={4}
+                key={product.slug.current}
+                sx={{ display: 'flex', justifyContent: 'center' }}
+              >
                 <ProductCard product={product} />
               </Grid>
             ))}

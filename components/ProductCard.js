@@ -48,8 +48,8 @@ const ProductCard = ({ product }) => {
               sx={{
                 height: 'auto',
                 width: 'auto',
-                maxHeight: 300,
-                maxWidth: 250,
+                maxHeight: 270,
+                maxWidth: 225,
               }}
             />
           </CardActionArea>
