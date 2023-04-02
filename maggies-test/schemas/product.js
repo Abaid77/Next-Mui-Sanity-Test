@@ -37,24 +37,27 @@ export default {
       },
     },
     {
+      title: 'Brand',
       name: 'brand',
-
-      type: 'reference',
-      to: [
-        {
-          type: 'brand',
-        },
-      ],
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Diamond-Envy', value: 'diamond-envy'},
+          {title: 'Rado', value: 'Rado'},
+        ],
+      },
     },
     {
+      title: 'Category',
       name: 'category',
-
-      type: 'reference',
-      to: [
-        {
-          type: 'category',
-        },
-      ],
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Watch', value: 'watch'},
+          {title: 'Jewelry', value: 'jewelry'},
+          {title: 'Other', value: 'other'},
+        ],
+      },
     },
   ],
 }
