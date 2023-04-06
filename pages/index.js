@@ -15,6 +15,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
+
 import MediaCard from '@/components/Card';
 import Navbar from '@/components/Navbar';
 import HomeCarousel from '@/components/HomeCarousel';
@@ -26,7 +27,7 @@ import { useEffect, useState } from 'react';
 import { createClient } from 'next-sanity';
 import { urlFor } from '../utils/client';
 import ProductCard from '@/components/ProductCard';
-import ProductCard2 from '@/components/ProductCard2';
+import NavBar from '@/components/Navbar';
 
 export default function Home({ products }) {
   const [open, setOpen] = useState(false);
@@ -47,7 +48,7 @@ export default function Home({ products }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Navbar />
+        <NavBar />
         <HomeCarousel />
         <Grid
           container

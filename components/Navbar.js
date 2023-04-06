@@ -111,7 +111,7 @@ export default function NavBar() {
                   </Link>
                   &#124;
                   <Link
-                    href="/jewlery"
+                    href="/product/jewelry"
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     <Button color="inherit">Jewelry</Button>
