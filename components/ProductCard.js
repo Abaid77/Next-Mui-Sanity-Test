@@ -28,6 +28,7 @@ const ProductCard = ({ product }) => {
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}
+        className="product-card"
       >
         <Link
           href={`/product/${product.slug.current}`}

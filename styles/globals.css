@@ -20,3 +20,31 @@ body,
   width: 100%;
   height: 250px;
 }
+
+.product-card:hover,
+.product-card:focus-visible {
+  transform: translateY(-0.5rem);
+}
+
+.product-card {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}

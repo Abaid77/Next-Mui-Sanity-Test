@@ -43,10 +43,10 @@ export default function Home({ products }) {
         <HomeCarousel />
         <Grid
           container
-          spacing={1}
+          spacing={2}
           sx={{
             display: 'flex',
-
+            paddingY: 2,
             flexWrap: 'wrap',
           }}
         >
