@@ -1,31 +1,22 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import styles from '@/styles/Home.module.css';
+
 import Button from '@mui/material/Button';
 import {
-  Alert,
   Box,
-  CircularProgress,
   Dialog,
-  DialogActions,
   DialogContent,
-  DialogContentText,
   DialogTitle,
-  TextField,
   Typography,
 } from '@mui/material';
 
-import MediaCard from '@/components/Card';
-import Navbar from '@/components/Navbar';
 import HomeCarousel from '@/components/HomeCarousel';
 import Footer from '@/components/Footer';
 import { Grid } from '@mui/material';
 import MapSection from '../components/Map';
 import ContactUs from '@/components/ContactUs';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { createClient } from 'next-sanity';
-import { urlFor } from '../utils/client';
+
 import ProductCard from '@/components/ProductCard';
 import NavBar from '@/components/Navbar';
 
