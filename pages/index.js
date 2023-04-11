@@ -19,6 +19,7 @@ import { createClient } from 'next-sanity';
 
 import ProductCard from '@/components/ProductCard';
 import NavBar from '@/components/Navbar';
+import ServiceCard from '@/components/ServiceCard';
 
 export default function Home({ products }) {
   const [open, setOpen] = useState(false);
@@ -29,6 +30,37 @@ export default function Home({ products }) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const services = [
+    {
+      title: 'Custom Engagement Rings',
+      link: '/custom-engagement-rings',
+      description:
+        'Velit deserunt aute amet dolore tempor est aliqua amet incididunt nostrud commodo.',
+      image_link: '/static/custom-engagement-ring.jpg',
+    },
+    {
+      title: 'Custom Jewelry',
+      link: '/custom-jewelry',
+      description:
+        'Velit deserunt aute amet dolore tempor est aliqua amet incididunt nostrud commodo aliquip dolor.',
+      image_link: '/static/custom-jewelry-design.jpg',
+    },
+    {
+      title: 'Custom Laser Engraving',
+      link: '/engraving',
+      description:
+        'Velit deserunt aute amet dolore tempor est aliqua amet incididunt nostrud commodo aliquip dolor.',
+      image_link: '/static/custom-engraving.jpg',
+    },
+    {
+      title: 'We Buy Gold',
+      link: '/we-buy-gold',
+      description:
+        'Velit deserunt aute amet dolore tempor est aliqua amet incididunt nostrud commodo aliquip dolor.',
+      image_link: '/static/we-buy-gold.jpg',
+    },
+  ];
 
   return (
     <>
@@ -60,6 +92,29 @@ export default function Home({ products }) {
               sx={{ display: 'flex', justifyContent: 'center' }}
             >
               <ProductCard product={product} />
+            </Grid>
+          ))}
+        </Grid>
+
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            display: 'flex',
+            paddingY: 2,
+            flexWrap: 'wrap',
+          }}
+        >
+          {services.map((service) => (
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={4}
+              key={service.title}
+              sx={{ display: 'flex', justifyContent: 'center' }}
+            >
+              <ServiceCard service={service} />
             </Grid>
           ))}
         </Grid>
