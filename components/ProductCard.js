@@ -1,7 +1,6 @@
-import { urlFor, urlForThumbnail } from '@/utils/client';
+import { urlFor } from '@/utils/client';
 import {
   Box,
-  Button,
   Card,
   CardActionArea,
   CardActions,

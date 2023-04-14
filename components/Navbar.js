@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import { Avatar, Button, Grid, useMediaQuery } from '@mui/material';
+import { Button, Grid, useMediaQuery } from '@mui/material';
 import { PhoneEnabled } from '@mui/icons-material';
 import Link from 'next/link';
 import MenuDrawer from './MenuDrawer';
