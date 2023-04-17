@@ -15,24 +15,11 @@ export default function ProductCarousel(props) {
       showStatus={false}
       stopOnHover={false}
     >
-      {/* {products?.map((product) => (
-          <Product key={product._id} product={product} />
-        ))} */}
-
       {props.images?.map((image) => (
         <div key={props.slug}>
           <img src={urlFor(image)} alt="Product Image" key={props.slug} />
         </div>
       ))}
-      {/* <div>
-        <img src={urlFor(props.images[0])} alt="Maggies Banner" />
-      </div>
-      <div>
-        <img src={urlFor(props.images[1])} alt="Maggies Banner" />
-      </div>
-      <div>
-        <img src={urlFor(props.images[2])} alt="Maggies Banner" />
-      </div> */}
     </Carousel>
   );
 }
