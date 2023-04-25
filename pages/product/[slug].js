@@ -1,4 +1,4 @@
-import client, { urlFor } from '@/utils/client';
+import client from '@/utils/client';
 import { useState } from 'react';
 import {
   Alert,
@@ -10,8 +10,8 @@ import {
   Card,
   Button,
 } from '@mui/material';
-import { Box, margin } from '@mui/system';
-import Image from 'next/image';
+import { Box } from '@mui/system';
+
 import { useEffect } from 'react';
 import { Link } from '@mui/material';
 
