@@ -7,8 +7,6 @@ import {
   Typography,
   List,
   ListItem,
-  Card,
-  Button,
 } from '@mui/material';
 import { Box } from '@mui/system';
 

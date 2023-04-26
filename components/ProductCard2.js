@@ -1,9 +1,6 @@
 import { urlFor } from '@/utils/client';
 import {
-  Button,
-  Box,
   Card,
-  CardActionArea,
   CardActions,
   CardContent,
   CardMedia,
@@ -11,9 +8,9 @@ import {
   Typography,
   IconButton,
 } from '@mui/material';
-import { Link } from '@mui/material';
+
 import React from 'react';
-import NextLink from 'next/link';
+
 import { AddShoppingCart } from '@mui/icons-material';
 
 const ProductCard2 = ({ product, size }) => {
