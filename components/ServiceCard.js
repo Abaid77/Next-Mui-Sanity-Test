@@ -1,4 +1,3 @@
-import { urlFor, urlForThumbnail } from '@/utils/client';
 import {
   Box,
   Button,
@@ -8,28 +7,11 @@ import {
   CardContent,
   CardMedia,
   CircularProgress,
-  IconButton,
   Typography,
 } from '@mui/material';
 import { Link } from '@mui/material';
 import React from 'react';
 import NextLink from 'next/link';
-import InfoIcon from '@mui/icons-material/Info';
-
-const services = [
-  {
-    title: 'Custom Engagement Rings',
-    link: '/custom-engagement-rings',
-  },
-  {
-    title: 'Custom Jewelry',
-    link: '/custom-jewelry',
-  },
-  {
-    title: 'Engraving',
-    link: '/engraving',
-  },
-];
 
 const ServiceCard = ({ service }) => {
   if (service) {
@@ -101,15 +83,6 @@ const ServiceCard = ({ service }) => {
             >
               Get More Info
             </Button>
-            {/* <IconButton
-              aria-label="More Info"
-              component={Link}
-              href={`/product/${service.link}`}
-              size="small"
-              color="secondary"
-            >
-              <InfoIcon />
-            </IconButton> */}
           </CardActions>
         </Box>
       </Card>
