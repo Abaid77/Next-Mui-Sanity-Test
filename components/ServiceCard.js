@@ -73,7 +73,6 @@ const ServiceCard = ({ service }) => {
               justifyContent: 'center',
             }}
           >
-            {/* <Typography color="secondary">Click to get more info</Typography> */}
             <Button
               variant="outlined"
               color="success"
