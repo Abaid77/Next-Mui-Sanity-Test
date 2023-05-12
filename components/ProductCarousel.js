@@ -2,8 +2,6 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { urlFor } from '@/utils/client';
 
-//Spining Product Carousel for Product Details page
-
 export default function ProductCarousel(props) {
   return (
     <Carousel
