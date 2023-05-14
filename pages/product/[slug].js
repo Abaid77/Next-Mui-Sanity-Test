@@ -17,33 +17,33 @@ import NextLink from 'next/link';
 import ProductCarousel from '@/components/ProductCarousel';
 import ProductCard from '@/components/ProductCard';
 
-export default function ProductScreen(props) {
+export default function ProductScreen(props, product, products) {
   const { slug } = props;
   const [state, setState] = useState({
     product: null,
     products: null,
-    loading: true,
+    loading: false,
     error: '',
   });
 
-  const { product, loading, error, products } = state;
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const product = await client.fetch(
-          `
-            *[_type == "product" && slug.current == $slug][0]`,
-          { slug }
-        );
-        const products = await client.fetch('*[_type == "product"]');
+  const { loading, error } = state;
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const product = await client.fetch(
+  //         `
+  //           *[_type == "product" && slug.current == $slug][0]`,
+  //         { slug }
+  //       );
+  //       const products = await client.fetch('*[_type == "product"]');
 
-        setState({ ...state, product, products, loading: false });
-      } catch (err) {
-        setState({ ...state, error: err.message, loading: false });
-      }
-    };
-    fetchData();
-  }, []);
+  //       setState({ ...state, product, products, loading: false });
+  //     } catch (err) {
+  //       setState({ ...state, error: err.message, loading: false });
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <>
@@ -135,7 +135,7 @@ export default function ProductScreen(props) {
               flexWrap: 'wrap',
             }}
           >
-            {products.map((product) => (
+            {products?.map((product) => (
               <Grid
                 item
                 xs={12}
@@ -159,38 +159,38 @@ export default function ProductScreen(props) {
   );
 }
 
-export function getServerSideProps(context) {
+// export function getServerSideProps(context) {
+//   return {
+//     props: { slug: context.params.slug },
+//   };
+// }
+
+export const getStaticPaths = async () => {
+  const query = `*[_type == "product"] { slug  { current }}`;
+
+  const products = await client.fetch(query);
+
+  const paths = products.map((product) => ({
+    params: {
+      slug: product.slug.current,
+    },
+  }));
   return {
-    props: { slug: context.params.slug },
+    paths,
+    fallback: 'blocking',
   };
-}
+};
 
-// export const getStaticPaths = async () => {
-//   const query = `*[_type == "product"] { slug  { current }}`;
+export const getStaticProps = async ({ params: { slug } }) => {
+  const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
+  const productsQuery = '*[_type == "product"]';
+  const product = await client.fetch(query);
+  const products = await client.fetch(productsQuery);
 
-//   const products = await client.fetch(query);
+  const bannerQuery = '*[_type == "banner"]';
+  const bannerData = await client.fetch(bannerQuery);
 
-//   const paths = products.map((product) => ({
-//     params: {
-//       slug: product.slug.current,
-//     },
-//   }));
-//   return {
-//     paths,
-//     fallback: 'blocking',
-//   };
-// };
-
-// export const getStaticProps = async ({ params: { slug } }) => {
-//   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-//   const productsQuery = '*[_type == "product"]';
-//   const product = await client.fetch(query);
-//   const products = await client.fetch(productsQuery);
-
-//   const bannerQuery = '*[_type == "banner"]';
-//   const bannerData = await client.fetch(bannerQuery);
-
-//   return {
-//     props: { products, product },
-//   };
-// };
+  return {
+    props: { products, product },
+  };
+};
