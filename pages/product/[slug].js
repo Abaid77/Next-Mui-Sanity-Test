@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { client, urlFor } from '@/utils/client';
 
 import {
@@ -16,14 +16,11 @@ import NextLink from 'next/link';
 import ProductCarousel from '@/components/ProductCarousel';
 import ProductCard from '@/components/ProductCard';
 
-import { urlFor } from '@/utils/client';
-import { NextSeo } from 'next-seo';
-
 const ProductDetails = ({ product, products }) => {
-  const { image, name, description, price } = product;
+  const [randomArrayIndex, setRandomArrayIndex] = useState();
   return (
     <>
-      <NextSeo
+      {/* <NextSeo
         title={`${product.brand} ${product.name}| Maggie's Diamond Boutique`}
         description={`${product.description}`}
         canonical={`https://maggiesdiamond.com/product/jewelry/${product.slug.current}`}
@@ -41,7 +38,7 @@ const ProductDetails = ({ product, products }) => {
             },
           ],
         }}
-      />
+      /> */}
       <Box padding={5}>
         <Grid
           container
