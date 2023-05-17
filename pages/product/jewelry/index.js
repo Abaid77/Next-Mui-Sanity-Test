@@ -1,7 +1,7 @@
 import AppPagination from '@/components/pagination';
 import ProductCard from '@/components/ProductCard';
 import { client } from '@/utils/client';
-import { Grid } from '@mui/material';
+import { Grid, Pagination } from '@mui/material';
 import { Alert, CircularProgress } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
@@ -15,6 +15,20 @@ const Jewelry = () => {
     error: '',
   });
 
+  const pageSize = 3;
+
+  const [pagination, setPagination] = useState({
+    count: 0,
+    from: 0,
+    to: pageSize,
+  });
+
+  const handlePageChange = (event, page) => {
+    const from = (page - 1) * pageSize;
+    const to = (page - 1) * pageSize + pageSize;
+    setPagination({ ...pagination, from: from, to: to });
+  };
+
   const { loading, error, products } = state;
   useEffect(() => {
     const fetchData = async () => {
@@ -22,6 +36,7 @@ const Jewelry = () => {
         const products = await client.fetch('*[_type == "product"]');
 
         setState({ ...state, products, loading: false });
+        setPagination({ ...pagination, count: products.length });
       } catch (err) {
         setState({ ...state, error: err.message, loading: false });
       }
@@ -45,7 +60,7 @@ const Jewelry = () => {
               flexWrap: 'wrap',
             }}
           >
-            {products.map((product) => (
+            {products.slice(pagination.from, pagination.to).map((product) => (
               <Grid
                 item
                 xs={12}
@@ -58,7 +73,17 @@ const Jewelry = () => {
               </Grid>
             ))}
           </Grid>
-          <AppPagination />
+          <Box
+            justifyContent={'center'}
+            alignItems="center"
+            display={'flex'}
+            sx={{ margin: '20px 0px' }}
+          >
+            <Pagination
+              count={Math.ceil(pagination.count / pageSize)}
+              onChange={handlePageChange}
+            />
+          </Box>
         </Box>
       )}
     </>
