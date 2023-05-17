@@ -27,29 +27,29 @@ const ServiceCard = ({ service }) => {
         }}
         className="product-card"
       >
-        <Link href={`/product/${service.link}`} passHref component={NextLink}>
-          <CardActionArea
+        {/* <Link href={`/product/${service.link}`} passHref component={NextLink}> */}
+        <CardActionArea
+          sx={{
+            display: 'flex',
+            flexGrow: 1,
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <CardMedia
+            component="img"
+            src={service.image_link}
+            title={service.name}
             sx={{
-              display: 'flex',
-              flexGrow: 1,
-              flexDirection: 'column',
-              alignItems: 'center',
+              // height: 'auto',
+              // width: 'auto',
+              maxHeight: 330,
+              maxWidth: 275,
+              marginTop: 1,
             }}
-          >
-            <CardMedia
-              component="img"
-              src={service.image_link}
-              title={service.name}
-              sx={{
-                // height: 'auto',
-                // width: 'auto',
-                maxHeight: 330,
-                maxWidth: 275,
-                marginTop: 1,
-              }}
-            />
-          </CardActionArea>
-        </Link>
+          />
+        </CardActionArea>
+        {/* </Link> */}
         <Box>
           <CardContent
             sx={{
@@ -78,7 +78,7 @@ const ServiceCard = ({ service }) => {
               color="success"
               aria-label="More Info"
               component={Link}
-              href={`/product/${service.link}`}
+              // href={`/product${service.link}`}
             >
               Get More Info
             </Button>

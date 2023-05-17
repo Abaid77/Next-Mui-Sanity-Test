@@ -1,5 +1,6 @@
+import AppPagination from '@/components/pagination';
 import ProductCard from '@/components/ProductCard';
-import client from '@/utils/client';
+import { client } from '@/utils/client';
 import { Grid } from '@mui/material';
 import { Alert, CircularProgress } from '@mui/material';
 import { Box } from '@mui/system';
@@ -9,7 +10,7 @@ import { useEffect } from 'react';
 
 const Jewelry = () => {
   const [state, setState] = useState({
-    products: null,
+    products: [],
     loading: true,
     error: '',
   });
@@ -18,9 +19,7 @@ const Jewelry = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const products = await client.fetch(
-          '*[_type == "product" && category match "jewelry"]'
-        );
+        const products = await client.fetch('*[_type == "product"]');
 
         setState({ ...state, products, loading: false });
       } catch (err) {
@@ -59,6 +58,7 @@ const Jewelry = () => {
               </Grid>
             ))}
           </Grid>
+          <AppPagination />
         </Box>
       )}
     </>
