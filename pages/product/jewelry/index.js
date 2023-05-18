@@ -1,4 +1,3 @@
-import AppPagination from '@/components/pagination';
 import ProductCard from '@/components/ProductCard';
 import { client } from '@/utils/client';
 import { Grid, Pagination } from '@mui/material';
@@ -82,6 +81,9 @@ const Jewelry = () => {
             <Pagination
               count={Math.ceil(pagination.count / pageSize)}
               onChange={handlePageChange}
+              showFirstButton
+              showLastButton
+              size="large"
             />
           </Box>
         </Box>
