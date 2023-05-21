@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
-import { client, urlFor } from '@/utils/client';
+import { client } from '@/utils/client';
 
-import {
-  Alert,
-  CircularProgress,
-  Grid,
-  Typography,
-  Box,
-  Button,
-} from '@mui/material';
+import { Grid, Typography, Box, Button } from '@mui/material';
 
 import { Link } from '@mui/material';
 
