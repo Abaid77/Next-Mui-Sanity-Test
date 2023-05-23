@@ -13,25 +13,6 @@ const ProductDetails = ({ product, products }) => {
   const [randomArrayIndex, setRandomArrayIndex] = useState();
   return (
     <>
-      {/* <NextSeo
-        title={`${product.brand} ${product.name}| Maggie's Diamond Boutique`}
-        description={`${product.description}`}
-        canonical={`https://maggiesdiamond.com/product/jewelry/${product.slug.current}`}
-        openGraph={{
-          type: 'website',
-          url: `https://maggiesdiamond.com/product/jewelry/${product.slug.current}`,
-          title: `${product.brand} ${product.name}| Maggie's Diamond Boutique`,
-          description: `${product.description}`,
-          images: [
-            {
-              url: `${urlFor(product.image[0])}`,
-              width: 2700,
-              height: 2250,
-              alt: `Maggie's Diamond Boutique - ${product.name}`,
-            },
-          ],
-        }}
-      /> */}
       <Box padding={5}>
         <Grid
           container
