@@ -8,6 +8,7 @@ import {
   CardMedia,
   CircularProgress,
   IconButton,
+  Tooltip,
   Typography,
 } from '@mui/material';
 import { Link } from '@mui/material';
@@ -77,15 +78,17 @@ const ProductCard = ({ product }) => {
             }}
           >
             <Typography color="secondary">${product.price}</Typography>
-            <IconButton
-              aria-label="More Info"
-              component={Link}
-              href={`/product/${product.slug.current}`}
-              size="small"
-              color="secondary"
-            >
-              <InfoIcon />
-            </IconButton>
+            <Tooltip title={product.description}>
+              <IconButton
+                aria-label="More Info"
+                component={Link}
+                href={`/product/${product.slug.current}`}
+                size="small"
+                color="secondary"
+              >
+                <InfoIcon />
+              </IconButton>
+            </Tooltip>
           </CardActions>
         </Box>
       </Card>
