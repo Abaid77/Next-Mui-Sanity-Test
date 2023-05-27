@@ -99,15 +99,3 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
-
-{
-  /* <Button
-component={Link}
-href={`/product/${product.slug.current}`}
-size="small"
-color="secondary"
-variant="outlined"
->
-Details
-</Button> */
-}
