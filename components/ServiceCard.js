@@ -27,7 +27,6 @@ const ServiceCard = ({ service }) => {
         }}
         className="product-card"
       >
-        {/* <Link href={`/product/${service.link}`} passHref component={NextLink}> */}
         <CardActionArea
           sx={{
             display: 'flex',
@@ -49,7 +48,7 @@ const ServiceCard = ({ service }) => {
             }}
           />
         </CardActionArea>
-        {/* </Link> */}
+
         <Box>
           <CardContent
             sx={{
