@@ -62,18 +62,6 @@ export default function NavBar() {
 
   return (
     <Box sx={{ flexGrow: 1, marginBottom: '64px' }}>
-      {/* <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={auth}
-              onChange={handleChange}
-              aria-label="login switch"
-            />
-          }
-          label={auth ? 'Logout' : 'Login'}
-        />
-      </FormGroup> */}
       <AppBar position="fixed">
         <Toolbar>
           {hideInMobileMode ? maggiesLogo() : <MenuDrawer />}
