@@ -20,13 +20,6 @@ export default function NavBar() {
 
   const hideInMobileMode = useMediaQuery((theme) => theme.breakpoints.up('md'));
 
-  // const anchorElOnChange = (event) => {
-  //   setAuth(event.target.checked);
-  // };
-  // const menuOnChange = (event) => {
-  //   setAuth(event.target.checked);
-  // };
-
   const handleAnchorEl = (event) => {
     setAnchorEl(event.currentTarget);
   };
