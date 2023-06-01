@@ -11,7 +11,6 @@ import {
 } from '@mui/material';
 import { Link } from '@mui/material';
 import React from 'react';
-import NextLink from 'next/link';
 
 const ServiceCard = ({ service }) => {
   if (service) {
