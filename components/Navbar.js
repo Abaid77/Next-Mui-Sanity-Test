@@ -26,9 +26,6 @@ export default function NavBar() {
   const handlePhoneNumber = (event) => {
     setPhoneNumber(event.currentTarget);
   };
-  // const handleMenu = (event) => {
-  //   setMenu(event.currentTarget);
-  // };
 
   const anchorElOnClose = () => {
     setAnchorEl(null);
