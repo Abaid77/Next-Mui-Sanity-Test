@@ -76,7 +76,6 @@ const ServiceCard = ({ service }) => {
               color="success"
               aria-label="More Info"
               component={Link}
-              // href={`/product${service.link}`}
             >
               Get More Info
             </Button>
