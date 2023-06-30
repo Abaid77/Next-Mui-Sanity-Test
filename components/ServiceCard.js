@@ -39,8 +39,6 @@ const ServiceCard = ({ service }) => {
             src={service.image_link}
             title={service.name}
             sx={{
-              // height: 'auto',
-              // width: 'auto',
               maxHeight: 330,
               maxWidth: 275,
               marginTop: 1,
